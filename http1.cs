@@ -38,9 +38,6 @@ namespace DataFactoryFA
         {
             Console.WriteLine("Starting directory and file creation...");
 
-            // Create a ShareClient object
-            // ShareClient share = new ShareClient(ConnectionString, ShareName);
-
             // Create the file share if it doesn't exist
             await share.CreateIfNotExistsAsync();
 
