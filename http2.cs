@@ -1,19 +1,17 @@
-using Azure.Storage.Files.Shares.Models;
 using Azure.Storage.Files.Shares;
+using Azure.Storage.Files.Shares.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 using System;
+using System.Threading.Tasks;
 
 namespace DataFactoryFA
 {
     public class http2
     {
         private readonly ILogger<http2> _logger;
-        // private static readonly ShareClient share = new ShareClient(ConnectionString, ShareName);
         private readonly ShareClient share;
         private readonly IFileClient fileClient;
 
@@ -37,9 +35,6 @@ namespace DataFactoryFA
         async Task DeleteAll()
         {
             Console.WriteLine("Starting deletion of all files and directories...");
-
-            // Create a ShareClient object
-            // ShareClient share = new ShareClient(ConnectionString, ShareName);
 
             // Ensure the file share exists
             if (await share.ExistsAsync())

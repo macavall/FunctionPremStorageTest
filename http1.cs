@@ -1,4 +1,3 @@
-using Azure;
 using Azure.Storage.Files.Shares;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,6 @@ namespace DataFactoryFA
     {
         private int fileSizeMB = Convert.ToInt32(Environment.GetEnvironmentVariable("FileSizeInBytes") ?? "10") * 1024 * 1024; // 1 MB
         private int directoryDepth = Convert.ToInt32(Environment.GetEnvironmentVariable("directoryDepth") ?? "5");
-        // private static readonly ShareClient share = new ShareClient(ConnectionString, ShareName);
         private readonly ShareClient share;
 
         private readonly ILogger<http1> _logger;
